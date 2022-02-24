@@ -20,7 +20,7 @@ module Warden
               super
             elsif client_valid?
               fail('invalid_client')
-              self.error_description = 'Please confirm your account prior to use our service'
+              self.error_description = "Please confirm your email address prior to using our service. We've sent you an email with instructions."
             else
               fail('invalid_client')
               self.error_description = 'Incorrect username or password'
