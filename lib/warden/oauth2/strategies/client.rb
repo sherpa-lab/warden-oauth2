@@ -8,7 +8,7 @@ module Warden
         attr_reader :client, :client_id, :client_secret
 
         def authenticate!
-          @client = client_from_http_basic || client_from_request_params
+          @client = client_from_request_params || client_from_http_basic
 
           if client
             fail('invalid_scope') && return if scope && client.respond_to?(:scope) && !client.scope?(scope)
